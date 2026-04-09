@@ -3,10 +3,82 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Banksystem.Views"
+        xmlns:local="clr-namespace:Banksystem.ViewModels"
         mc:Ignorable="d"
-        Title="TransactionView" Height="450" Width="800">
-    <Grid>
-        
+        Title="Transaktioner" Height="750" Width="1000">
+
+    <Window.DataContext>
+        <local:TransactionViewModel />
+    </Window.DataContext>
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="LightSeaGreen" Padding="20">
+            <TextBlock Text="Transaktioner" Foreground="White" FontSize="30"
+                       FontWeight="Bold" VerticalAlignment="Center"/>
+        </Border>
+
+        <!-- Indhold -->
+        <Grid Grid.Row="1" Margin="30,20,30,30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Dato" FontWeight="Bold" FontSize="18"/>
+                <TextBlock Grid.Column="1" Text="Fra konto"  FontWeight="Bold" FontSize="18"/>
+                <TextBlock Grid.Column="2" Text="Til konto"  FontWeight="Bold" FontSize="18"/>
+                <TextBlock Grid.Column="3" Text="Beløb"      FontWeight="Bold" FontSize="18" HorizontalAlignment="Right"/>
+                <TextBlock Grid.Column="4" Text="Beskrivelse" FontWeight="Bold" FontSize="18" Margin="15,0,0,0"/>
+            </Grid>
+
+            <Separator Grid.Row="0" VerticalAlignment="Bottom" Background="LightSeaGreen" Margin="0,4,0,0"/>
+
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding transactions}" Margin="0,10,0,0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Grid Margin="0,6">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" FontSize="15"
+                                           Text="{Binding Time, StringFormat='{}{0:dd/MM/yyyy HH:mm}'}"/>
+                                <TextBlock Grid.Column="1" FontSize="15"
+                                           Text="{Binding FromAccount}"/>
+                                <TextBlock Grid.Column="2" FontSize="15"
+                                           Text="{Binding ToAccount}"/>
+                                <TextBlock Grid.Column="3" FontSize="15"
+                                           HorizontalAlignment="Right"
+                                           Foreground="DarkRed"
+                                           Text="{Binding Amount, StringFormat='{}{0:N2} kr.'}"/>
+                                <TextBlock Grid.Column="4" FontSize="15"
+                                           Foreground="Gray"
+                                           Margin="15,0,0,0"
+                                           Text="{Binding Description}"/>
+                            </Grid>
+                            <Separator Background="#EEE" Margin="0,6"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
     </Grid>
 </Window>

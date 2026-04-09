@@ -26,5 +26,11 @@ namespace Banksystem.Views
         {
             // TODO: Åbn menu
         }
+
+        private void Transactions_Click(object sender, RoutedEventArgs e)
+        {
+            TransactionView transaction = new TransactionView();
+            transaction.Show();
+        }
     }
 }
