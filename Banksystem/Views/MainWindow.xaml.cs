@@ -23,5 +23,15 @@ namespace Banksystem.Views
         {
             InitializeComponent();
         }
+
+        private void Overfor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Menu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
