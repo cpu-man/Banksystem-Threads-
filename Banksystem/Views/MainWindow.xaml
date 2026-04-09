@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Banksystem.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="1000">
+        Title="RSP Bank" Height="750" Width="1000">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -14,45 +13,72 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!-- Header -->
         <Border Grid.Row="0" Background="LightSeaGreen" Padding="20">
-            <TextBlock Text="RSP Bank" Foreground="White" FontSize="30" FontWeight="Bold" VerticalAlignment="Center"/>
+            <TextBlock Text="RSP Bank" Foreground="White" FontSize="30"
+                       FontWeight="Bold" VerticalAlignment="Center"/>
         </Border>
 
+        <!-- Knapper -->
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="30,10">
-            <Button x:Name="Overfor"  Content="Overfør" Width="120" Height="35" Margin="0,0,10,0" Background="LightSeaGreen" Foreground="White" FontWeight="Bold" Click="Overfor_Click"/>
-            <Button x:Name="Menu" Content="Menu" Width="120" Height="35" Background="#EEE" FontWeight="Bold" Click="Menu_Click"/>
+            <Button x:Name="Overfor" Content="Overfør" Width="120" Height="35"
+                    Margin="0,0,10,0" Background="LightSeaGreen" Foreground="White"
+                    FontWeight="Bold" Click="Overfor_Click"/>
+            <Button x:Name="Menu" Content="Menu" Width="120" Height="35"
+                    Background="#EEE" FontWeight="Bold" Click="Menu_Click"/>
         </StackPanel>
 
+        <!-- Kontoindhold -->
         <Grid Grid.Row="2" Margin="30,0,30,30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Konto Navn" FontWeight="Bold" FontSize="18"/>
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="Konto Nummer" FontWeight="Bold" FontSize="18"/>
-            <TextBlock Grid.Row="0" Grid.Column="2" Text="Saldo" FontWeight="Bold" FontSize="18" HorizontalAlignment="Right"/>
+            <!-- Kolonneoverskrifter -->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Konto Navn"
+                       FontWeight="Bold" FontSize="18"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Konto Nummer"
+                       FontWeight="Bold" FontSize="18"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="Saldo"
+                       FontWeight="Bold" FontSize="18" HorizontalAlignment="Right"/>
 
-            <StackPanel Grid.Row="1" Grid.ColumnSpan="3" Margin="0,20,0,0">
-                <Grid Margin="0,5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
+            <!-- Dynamisk liste — binder til AccountViewModel.Accounts -->
+            <ItemsControl Grid.Row="1" Grid.ColumnSpan="3"
+                          ItemsSource="{Binding Accounts}"
+                          Margin="0,20,0,0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Grid Margin="0,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="0" Text="Lønkonto" FontSize="16"/>
-                    <TextBlock Grid.Column="1" Text="1234-567890" FontSize="16"/>
-                    <TextBlock Grid.Column="2" Text="12.500,50 kr." FontSize="16" Foreground="Green" HorizontalAlignment="Right"/>
-                </Grid>
-                <Separator Background="#EEE" Margin="0,10"/>
-            </StackPanel>
+                                <TextBlock Grid.Column="0"
+                                           Text="{Binding Name}"
+                                           FontSize="16"/>
+                                <TextBlock Grid.Column="1"
+                                           Text="{Binding AccountNumber}"
+                                           FontSize="16"/>
+                                <TextBlock Grid.Column="2"
+                                           FontSize="16"
+                                           HorizontalAlignment="Right"
+                                           Foreground="{Binding BalanceColor}"
+                                           Text="{Binding Balance, StringFormat='{}{0:N2} kr.'}"/>
+                            </Grid>
+                            <Separator Background="#EEE" Margin="0,10"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </Grid>
     </Grid>
 </Window>
