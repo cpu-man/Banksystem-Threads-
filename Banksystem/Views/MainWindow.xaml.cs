@@ -7,6 +7,7 @@ namespace Banksystem.Views
     public partial class MainWindow : Window
     {
         private readonly AccountViewModel _viewModel;
+        TransactionLogger _logger = new TransactionLogger();
 
         public MainWindow()
         {
@@ -29,7 +30,7 @@ namespace Banksystem.Views
 
         private void Transactions_Click(object sender, RoutedEventArgs e)
         {
-            TransactionView transaction = new TransactionView();
+            TransactionView transaction = new TransactionView(_logger);
             transaction.Show();
         }
     }

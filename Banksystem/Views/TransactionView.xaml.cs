@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Banksystem.Services;
+using Banksystem.ViewModels;
 
 namespace Banksystem.Views
 {
@@ -19,9 +21,10 @@ namespace Banksystem.Views
     /// </summary>
     public partial class TransactionView : Window
     {
-        public TransactionView()
+        public TransactionView(TransactionLogger logger)
         {
             InitializeComponent();
+            DataContext = new TransactionViewModel(logger);
         }
     }
 }
