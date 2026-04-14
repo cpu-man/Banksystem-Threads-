@@ -10,6 +10,8 @@ namespace Banksystem.Services
 {
     public class TransactionLogger
     {
+        private static TransactionLogger? _instance;
+        public static TransactionLogger Instance => _instance ??= new TransactionLogger();
         private readonly ReaderWriterLockSlim _lock = new ReaderWriterLockSlim();
         private readonly List<Transaction> _transactions = new List<Transaction>();
         private int _newId = 1;

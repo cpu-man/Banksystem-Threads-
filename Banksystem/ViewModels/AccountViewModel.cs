@@ -15,15 +15,10 @@ namespace Banksystem.ViewModels
     {
         private readonly BankService _bankService;
 
-        // INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler? PropertyChanged;
-
         protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        // Properties med auto-notifikation
         private string _selectedAccountName = string.Empty;
         public string SelectedAccountName
         {
@@ -32,7 +27,7 @@ namespace Banksystem.ViewModels
             {
                 if (_selectedAccountName == value) return;
                 _selectedAccountName = value;
-                OnPropertyChanged(); // Fortæller UI: "denne property er ændret"
+                OnPropertyChanged();
             }
         }
 
@@ -45,13 +40,11 @@ namespace Banksystem.ViewModels
                 if (_selectedAccountBalance == value) return;
                 _selectedAccountBalance = value;
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(BalanceFormatted)); // Opdater også den formatterede version
+                OnPropertyChanged(nameof(BalanceFormatted));
             }
         }
 
-        // Read-only property beregnet fra SelectedAccountBalance
-        public string BalanceFormatted =>
-            $"{_selectedAccountBalance:N2} kr.";
+        public string BalanceFormatted => $"{_selectedAccountBalance:N2} kr.";
 
         private bool _isLoading;
         public bool IsLoading
@@ -65,27 +58,22 @@ namespace Banksystem.ViewModels
             }
         }
 
-        // ObservableCollection notificerer automatisk UI når elementer tilføjes/fjernes
         public ObservableCollection<Account> Accounts { get; } = new();
 
-        // Constructor
         public AccountViewModel(BankService bankService)
         {
             _bankService = bankService;
             LoadAccounts();
         }
 
-        // Metoder
         private void LoadAccounts()
         {
             IsLoading = true;
             Accounts.Clear();
-
             foreach (var account in _bankService.GetAllAccounts())
             {
                 Accounts.Add(account);
             }
-
             IsLoading = false;
         }
 

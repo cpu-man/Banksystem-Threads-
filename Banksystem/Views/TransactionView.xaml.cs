@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Banksystem.Models;
+using Banksystem.Services;
+using Banksystem.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +14,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Banksystem.Services;
-using Banksystem.ViewModels;
 
 namespace Banksystem.Views
 {
@@ -21,10 +22,12 @@ namespace Banksystem.Views
     /// </summary>
     public partial class TransactionView : Window
     {
-        public TransactionView(TransactionLogger logger)
+        public TransactionView(TransactionLogger logger, Models.Account account)
         {
             InitializeComponent();
+            Title = $"Transaktioner — {account.Name}";
             DataContext = new TransactionViewModel(logger);
         }
     }
 }
+    

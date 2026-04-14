@@ -23,5 +23,17 @@ namespace Banksystem.Views
         {
             InitializeComponent();
         }
+
+        private void AmountBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            var textBox = (System.Windows.Controls.TextBox)sender;
+            string newText = textBox.Text + e.Text;
+            e.Handled = !System.Text.RegularExpressions.Regex.IsMatch(newText, @"^\d*[,.]?\d{0,2}$");
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

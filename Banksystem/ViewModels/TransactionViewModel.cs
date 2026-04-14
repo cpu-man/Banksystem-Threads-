@@ -16,7 +16,7 @@ namespace Banksystem.ViewModels
     {
         public event PropertyChangedEventHandler? PropertyChanged;
         private readonly TransactionLogger _logger;
-
+        private readonly Account? _account;
         protected void OnPropertyChanged([CallerMemberName] string? name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
@@ -27,22 +27,37 @@ namespace Banksystem.ViewModels
         public TransactionViewModel(TransactionLogger logger)
         {
             _logger = logger;
+            _account = null;
+            Refresh();
+        }
+
+        public TransactionViewModel(TransactionLogger logger, Account account)
+        {
+            _logger = logger;
+            _account = account;
             Refresh();
         }
 
         public void Refresh()
-        {
+        {   
             Transactions.Clear();
             foreach (var x in _logger.GetAll())
-                Transactions.Add(x); 
-        }
+            {
+                if (_account == null ||
+                    x.FromAccount == _account.Name ||
+                    x.ToAccount == _account.Name)
+                {
+                    Transactions.Add(x);
+                }
+            }
 
-        //public void TempData()
-        //{
-        //    transactions.Add(new Transaction { Id = 1, Time = DateTime.Now.AddDays(-1), FromAccount = "Lønkonto", ToAccount = "Opsparingskonto", Amount = 1200m, Description = "Opsparing" });
-        //    transactions.Add(new Transaction { Id = 2, Time = DateTime.Now.AddDays(-3), FromAccount = "Lønkonto", ToAccount = "Apple", Amount = 109m, Description = "Apple Music abonnement" });
-        //    transactions.Add(new Transaction { Id = 3, Time = DateTime.Now.AddDays(-7), FromAccount = "Lønkonto", ToAccount = "Lidl", Amount = 118m, Description = "Lidl Silkeborg" });
-        //    transactions.Add(new Transaction { Id = 4, Time = DateTime.Now.AddDays(-8), FromAccount = "Lønkonto", ToAccount = "Molslinjen", Amount = 249m, Description = "Billet" });
-        //}
-    }
+            //public void TempData()
+            //{
+            //    transactions.Add(new Transaction { Id = 1, Time = DateTime.Now.AddDays(-1), FromAccount = "Lønkonto", ToAccount = "Opsparingskonto", Amount = 1200m, Description = "Opsparing" });
+            //    transactions.Add(new Transaction { Id = 2, Time = DateTime.Now.AddDays(-3), FromAccount = "Lønkonto", ToAccount = "Apple", Amount = 109m, Description = "Apple Music abonnement" });
+            //    transactions.Add(new Transaction { Id = 3, Time = DateTime.Now.AddDays(-7), FromAccount = "Lønkonto", ToAccount = "Lidl", Amount = 118m, Description = "Lidl Silkeborg" });
+            //    transactions.Add(new Transaction { Id = 4, Time = DateTime.Now.AddDays(-8), FromAccount = "Lønkonto", ToAccount = "Molslinjen", Amount = 249m, Description = "Billet" });
+            //}
+        }
+    } 
 }
