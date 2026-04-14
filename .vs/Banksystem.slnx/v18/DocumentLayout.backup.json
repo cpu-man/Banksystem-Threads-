@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B3103D84-AD3E-83BA-5D40-960B61031934}|Banksystem\\Banksystem.csproj|c:\\users\\sidne\\source\\repos\\banksystem(threads)\\banksystem\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3103D84-AD3E-83BA-5D40-960B61031934}|Banksystem\\Banksystem.csproj|solutionrelative:banksystem\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B3103D84-AD3E-83BA-5D40-960B61031934}|Banksystem\\Banksystem.csproj|c:\\users\\sidne\\source\\repos\\banksystem(threads)\\banksystem\\viewmodels\\transactionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3103D84-AD3E-83BA-5D40-960B61031934}|Banksystem\\Banksystem.csproj|solutionrelative:banksystem\\viewmodels\\transactionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -70,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,20 +86,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TransferWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Views\\TransferWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Banksystem\\Views\\TransferWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Views\\TransferWindow.xaml.cs",
-              "RelativeToolTip": "Banksystem\\Views\\TransferWindow.xaml.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\App.xaml.cs",
+              "RelativeDocumentMoniker": "Banksystem\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\App.xaml.cs*",
+              "RelativeToolTip": "Banksystem\\App.xaml.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T10:35:27.681Z",
+              "WhenOpened": "2026-04-14T20:03:12.964Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Views\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Banksystem\\Views\\MainWindow.xaml.cs",
@@ -103,24 +107,47 @@
               "RelativeToolTip": "Banksystem\\Views\\MainWindow.xaml.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T21:40:39.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-09T21:40:39.824Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TransactionView.xaml",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Views\\TransactionView.xaml",
               "RelativeDocumentMoniker": "Banksystem\\Views\\TransactionView.xaml",
               "ToolTip": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Views\\TransactionView.xaml",
               "RelativeToolTip": "Banksystem\\Views\\TransactionView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-09T21:25:11.241Z",
+              "WhenOpened": "2026-04-09T21:25:11.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TransactionViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\ViewModels\\TransactionViewModel.cs",
+              "RelativeDocumentMoniker": "Banksystem\\ViewModels\\TransactionViewModel.cs",
+              "ToolTip": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\ViewModels\\TransactionViewModel.cs",
+              "RelativeToolTip": "Banksystem\\ViewModels\\TransactionViewModel.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAAC0AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T21:20:04.922Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "TransferWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Views\\TransferWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Banksystem\\Views\\TransferWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Views\\TransferWindow.xaml.cs",
+              "RelativeToolTip": "Banksystem\\Views\\TransferWindow.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T10:35:27.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Transaction.cs",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Models\\Transaction.cs",
               "RelativeDocumentMoniker": "Banksystem\\Models\\Transaction.cs",
@@ -128,12 +155,11 @@
               "RelativeToolTip": "Banksystem\\Models\\Transaction.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T20:56:27.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-09T20:56:27.378Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TransactionView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Views\\TransactionView.xaml.cs",
               "RelativeDocumentMoniker": "Banksystem\\Views\\TransactionView.xaml.cs",
@@ -141,49 +167,33 @@
               "RelativeToolTip": "Banksystem\\Views\\TransactionView.xaml.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAqwB0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-12T19:07:53.313Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-12T19:07:53.313Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "TransferWindow.xaml",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Views\\TransferWindow.xaml",
               "RelativeDocumentMoniker": "Banksystem\\Views\\TransferWindow.xaml",
               "ToolTip": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Views\\TransferWindow.xaml",
               "RelativeToolTip": "Banksystem\\Views\\TransferWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-09T21:21:36.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-09T21:21:36.527Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TransactionViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\ViewModels\\TransactionViewModel.cs",
-              "RelativeDocumentMoniker": "Banksystem\\ViewModels\\TransactionViewModel.cs",
-              "ToolTip": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\ViewModels\\TransactionViewModel.cs",
-              "RelativeToolTip": "Banksystem\\ViewModels\\TransactionViewModel.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAuwC0AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T21:20:04.922Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Views\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Banksystem\\Views\\MainWindow.xaml",
               "ToolTip": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Views\\MainWindow.xaml",
               "RelativeToolTip": "Banksystem\\Views\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-09T20:57:14.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-09T20:57:14.055Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "TransferViewModel.cs",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\ViewModels\\TransferViewModel.cs",
               "RelativeDocumentMoniker": "Banksystem\\ViewModels\\TransferViewModel.cs",
@@ -191,12 +201,11 @@
               "RelativeToolTip": "Banksystem\\ViewModels\\TransferViewModel.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAQwK0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T21:46:53.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-09T21:46:53.464Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Account.cs",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Models\\Account.cs",
               "RelativeDocumentMoniker": "Banksystem\\Models\\Account.cs",
@@ -204,12 +213,11 @@
               "RelativeToolTip": "Banksystem\\Models\\Account.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T20:56:35.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-09T20:56:35.478Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AccountViewModel.cs",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\ViewModels\\AccountViewModel.cs",
               "RelativeDocumentMoniker": "Banksystem\\ViewModels\\AccountViewModel.cs",
@@ -217,12 +225,11 @@
               "RelativeToolTip": "Banksystem\\ViewModels\\AccountViewModel.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAFUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T21:01:43.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-09T21:01:43.776Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "TransactionLogger.cs",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Services\\TransactionLogger.cs",
               "RelativeDocumentMoniker": "Banksystem\\Services\\TransactionLogger.cs",
@@ -230,12 +237,11 @@
               "RelativeToolTip": "Banksystem\\Services\\TransactionLogger.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAiwAwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-12T18:54:08.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-12T18:54:08.868Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ThreadPoolManager.cs",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Services\\ThreadPoolManager.cs",
               "RelativeDocumentMoniker": "Banksystem\\Services\\ThreadPoolManager.cs",
@@ -243,12 +249,11 @@
               "RelativeToolTip": "Banksystem\\Services\\ThreadPoolManager.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T10:19:51.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T10:19:51.914Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Bank.cs",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Models\\Bank.cs",
               "RelativeDocumentMoniker": "Banksystem\\Models\\Bank.cs",
@@ -256,12 +261,11 @@
               "RelativeToolTip": "Banksystem\\Models\\Bank.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T20:56:33.853Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-09T20:56:33.853Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "BankService.cs",
               "DocumentMoniker": "C:\\Users\\sidne\\source\\repos\\Banksystem(Threads)\\Banksystem\\Services\\BankService.cs",
               "RelativeDocumentMoniker": "Banksystem\\Services\\BankService.cs",
@@ -269,8 +273,7 @@
               "RelativeToolTip": "Banksystem\\Services\\BankService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T20:57:02.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-09T20:57:02.717Z"
             }
           ]
         },

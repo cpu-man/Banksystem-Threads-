@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="RSPsplash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="RSPsplash.png" />
+  </ItemGroup>
+
 </Project>
