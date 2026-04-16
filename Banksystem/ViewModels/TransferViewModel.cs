@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -17,6 +18,8 @@ namespace Banksystem.ViewModels
     public class TransferViewModel : INotifyPropertyChanged
     {
         private readonly BankService _bankService;
+        private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(3);
+
 
         private Account? _selectedFromAccount;
         private Account? _selectedToAccount;
@@ -102,29 +105,46 @@ namespace Banksystem.ViewModels
             var from = SelectedFromAccount!;
             var to = SelectedToAccount!;
             string description = $"Transfer from {from.AccountNumber} to {to.AccountNumber}";
-
             IsBusy = true;
             HideStatus();
 
-            ThreadPoolManager.Instance.QueueWork(() =>
+            Thread thread = new Thread(() => //Manuelt oprettelse af tråd; alt efter lambda definerer trådens arbejde
             {
+                _semaphore.Wait();
+                try
+                {
+                //ThreadPoolManager.Instance.QueueWork(() =>
+                //{
+                Debug.WriteLine($"Tråd starter ID:{Thread.CurrentThread.ManagedThreadId}"); //Besked til Output så vi ved det virker
+                Thread.Sleep(500); //Sætter tråden i dvale for at simulerer at overførelsen tager tid
                 bool success = _bankService.Transfer(from, to, amount, description);
 
+                Debug.WriteLine($"Tråd færdig ID:{Thread.CurrentThread.ManagedThreadId}");
                 Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        IsBusy = false;
+                        if (success)
+                        {
+                            ShowStatus($"Transfer of {amount:N2} kr. completed!", true);
+                            AmountText = string.Empty;
+                        }
+                        else
+                        {
+                            ShowStatus("Transfer failed. Insufficient funds.", false);
+                        }
+                    });
+                }
+                finally
                 {
-                    IsBusy = false;
-                    if (success)
-                    {
-                        ShowStatus($"Transfer of {amount:N2} kr. completed!", true);
-                        AmountText = string.Empty;
-                    }
-                    else
-                    {
-                        ShowStatus("Transfer failed. Insufficient funds.", false);
-                    }
-                });
+                    _semaphore.Release(); //Semaphoren frigives
+                }
             });
+            thread.IsBackground = true; //Tråden lukker efter programmet lukkes
+            thread.Start(); //Tråden kører
         }
+     
+
+
 
         private bool TryParseAmount(out decimal amount)
         {
